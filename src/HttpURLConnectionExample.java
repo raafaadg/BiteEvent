@@ -34,7 +34,9 @@ public class HttpURLConnectionExample {
 		while(loop){
 			System.out.println("EXECUTANDO");
 			while(loopBite){
+				System.out.println("Monitorando");
 				http.sendGet();
+				Thread.sleep(200);
 				break;
 			}			
 		}
@@ -44,7 +46,7 @@ public class HttpURLConnectionExample {
 	// HTTP GET request
 	private void sendGet() throws Exception {
 
-		String url = "http://192.168.4.1/mestrado/mordida";
+		String url = "http://192.168.4.1/mestrado/bite";
 		
 		URL obj = new URL(url);
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -70,11 +72,11 @@ public class HttpURLConnectionExample {
 		in.close();
 
 		//print result
-		System.out.println(response.toString());
+		//System.out.println(response.toString());
 		if(response.toString().equals("Morder")){
 			click(960,540);
 			
-			System.out.println("Mordida Detectada!!");
+			//System.out.println("Mordida Detectada!!");
 		}
 
 	}
@@ -84,8 +86,8 @@ public class HttpURLConnectionExample {
 	    //bot.mouseMove(x, y);    
 	    //bot.keyPress(KeyEvent.KEY_LOCATION_RIGHT);
 	    //bot.keyRelease(KeyEvent.KEY_LOCATION_RIGHT);
-	    bot.mousePress(InputEvent.BUTTON3_MASK);
-	    bot.mouseRelease(InputEvent.BUTTON3_MASK);
+	    bot.mousePress(InputEvent.BUTTON1_MASK);
+	    bot.mouseRelease(InputEvent.BUTTON1_MASK);
 	}
 	
 	public static void start() throws AWTException{
